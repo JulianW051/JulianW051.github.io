@@ -11,63 +11,59 @@
 </head>
 <body>
     <?php
-        $page = "contact";
+        $page = "registreren";
         include("../includes/header.php")
     ?>
 	<main>
         <div class="container2">
-            <div class="form">
+            <div class="registreren">
                 <div class="title-reserveren">
                     <h1>
                         <span>Maak</span>
-                        reservering
+                        Account
                     </h1>
                 </div>
-                <form class="form__group field" action="../actions/reservering.php" id="target" method="post">
+                <form class="form__group field" action="../actions/registreren.php" id="target" method="post">
                     <div class="input-container">
                         <input  type="text" name="name" required=""/>
                         <label>Naam</label>		
+                    </div>
+                    <div class="input-container">
+                        <input type="tel" name="tel" required=""/>
+                        <label>Telefoon nummer</label>
                     </div>
                     <div class="input-container">
                         <input type="email" name="email" required=""/>
                         <label>Email</label>
                     </div>
                     <div class="input-container">
-                        <input type="date" name="date" required=""/>
+                        <input type="password" name="password" required=""/>
+                        <label>Wachtwoord</label>
                     </div>
-                    <div class="input-container">
-                        <input type="time" name="time" required=""/>
-                    </div>
-                    <button type="submit">Maak reservering</button>
+                    <button type="submit">Registreren</button>
                 </form>
             </div>
-            <div class="tijden">
+            <div class="inloggen">
                 <div class="title-reserveren">
                     <h1>
-                        <span>Openings</span>
-                        tijden
+                        <span>Naar</span>
+                        Account
                     </h1>
                 </div>
-                <div class="tijden-list">
-                    <ul class="dagen">
-                        <li>Maandag</li>
-                        <li>Dinsdag</li>
-                        <li>Woensdag</li>
-                        <li>Donderdag</li>
-                        <li>Vrijdag</li>
-                        <li>Zaterdag</li>
-                        <li>Zondag</li>
-                    </ul>
-                    <ul>
-                        <li>16:00 - 21:00</li>
-                        <li>16:00 - 21:00</li>
-                        <li>16:00 - 21:00</li>
-                        <li>16:00 - 21:00</li>
-                        <li>16:00 - 21:00</li>
-                        <li>16:00 - 21:00</li>
-                        <li>15:00 - 21:00</li>
-                    </ul>
-                </div>
+                <?php if(isset($_GET['error'])) { ?>
+                    <p class="error"> <?php echo $_GET['error']; ?></p>
+                <?php } ?>
+                <form class="form__group field" action="../actions/login.php" id="target" method="post">
+                    <div class="input-container">
+                        <input type="email" name="email" required=""/>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-container">
+                        <input  type="password" name="password" required=""/>
+                        <label>Wachtwoord</label>		
+                    </div>
+                    <button type="submit">Inloggen</button>
+                </form>
             </div>
         </div>
 	</main>

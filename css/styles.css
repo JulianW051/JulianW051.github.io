@@ -258,6 +258,9 @@ main .menu .container .cat ul li a .description {
 main .container2 {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+  row-gap: 50px;
+  column-gap: 50px;
   width: 80%;
   height: auto;
   margin: 50px 0 50px 0;
@@ -373,6 +376,54 @@ main .tijden-list .dagen {
 }
 
 /*///////////////////////////////////
+////////////////Registreren///////////////
+/////////////////////////////////*/
+
+main .container2 .registreren {
+  width: 350px;
+}
+
+main .container2 .inloggen {
+  width: 350px;
+}
+
+main .container2 form button {
+  width: 50%;
+  height: 50px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+main .container2 form button:hover {
+  background-color: rgb(114, 112, 112);
+  cursor: pointer;
+}
+
+/*///////////////////////////////////
+////////////////Admin///////////////
+/////////////////////////////////*/
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/*///////////////////////////////////
 ////////////////Footer//////////////
 /////////////////////////////////*/
 footer {
@@ -413,7 +464,7 @@ footer .container .right {
 }
 
 /*///////////////////////////////////
-////////////////back to top//////////////
+/////////////back to top////////////
 /////////////////////////////////*/
 
 .fa {

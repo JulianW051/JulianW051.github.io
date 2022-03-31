@@ -5,13 +5,13 @@
             <div class="nav">
             <?php
               if ($page === "index") {
-                echo "<a href='pages/beoordelingen.php'>beoordelingen</a>";
+                echo "<a href='pages/registreren.php'>registreren</a>";
                 echo "<a href='pages/reserveren.php'>reserveren</a>";
-              } else if ($page === "beoordeling") {
+              } else if ($page === "registreren") {
                 echo "<a href='../index.php'>Home</a>";
                 echo "<a href='reserveren.php'>reserveren</a>";
               } else if ($page === "contact") {
-                echo "<a href='beoordelingen.php'>beoordelingen</a>";
+                echo "<a href='registreren.php'>registreren</a>";
                 echo "<a href='../index.php'>Home</a>";
               }
             ?>
