@@ -34,6 +34,7 @@
         </div>
         <div class="menu-admin">
             <h2>Menu</h2>
+            <a href="menu-toevoegen.php"><button>Item toevoegen</button></a>
             <table>
                 <tr> 
                     <th>gerecht</th>
@@ -44,7 +45,7 @@
                     <th></th>
                 </tr>
                 <?php  
-                    include("../includes/reserveringen-uitlezen.php")
+                    include("../includes/menu-uitlezen.php")
                 ?>
             </table>
         </div>
