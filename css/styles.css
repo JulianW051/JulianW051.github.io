@@ -198,6 +198,36 @@ main .menu .container {
   flex-direction: column;
 }
 
+main .menu .container .searchBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+main .menu .container .searchBar div {
+  width: 50%;
+}
+
+main .menu .container .niksGevonden {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+main .menu .container .niksGevonden div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main .menu .container .niksGevonden span {
+  color: red;
+}
+
 main .menu .container .cat {
   width: 100%;
   height: auto;
