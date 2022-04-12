@@ -40,27 +40,60 @@
                     <p>Natuurlijk, Vers en Biologisch<br><br> In onze Thaise authentieke keuken bereiden onze Thaise chefs alle gerechten met uitsluitend verse en natuurlijke ingrediënten! Zonder smaakversterkers of andere onnatuurlijke toevoegingen. Alle ingrediënten die biologisch te vinden zijn gebruiken wij in onze gerechten. Waardoor onze gerechten niet alleen heel lekker zijn maar ook gezond, vers en verantwoord. Eet u smakelijk, dank voor uw bestelling.</p>
                 </div>
                 <div class="container">
+                    <form class="searchBar" action="index.php" method="post">
+                        <div class="input-container">
+                            <input type="text" name="search" required=""/>
+                            <label>Zoeken</label>		
+                        </div>
+                    </form>
+                    <?php 
+                    require_once("includes/connector.php");
+                    if (isset($_POST['search'])) {
+
+                        $likeInput = '%'.$_POST['search'].'%';
+
+                        $sql = "SELECT * FROM menu WHERE gerecht LIKE :input OR beschrijving LIKE :input2";
+                        $stmt = $connect->prepare($sql);
+                        $stmt->bindParam(":input", $likeInput);
+                        $stmt->bindParam(":input2", $likeInput);
+                        $stmt->execute();
+                        $result = $stmt->fetchAll();
+
+                        if ($stmt->rowCount() == 0) {
+                            echo"<div class='niksGevonden'>";
+                            echo    "<div><h4>We hebben helaas niks kunnen vinden op: <span>" . $_POST['search'] . "</span></h4></div>";
+                            echo    "<a href='index.php'><p>Klik hier om alle gerechten weer te geven!</p></a>";
+                            echo"</div>";
+                        } else {
+                            echo"<div class='niksGevonden'>";
+                            echo    "<div><h4>We hebben de volgende resultaten op: <span>" . $_POST['search'] . "</span></h4></div>";
+                            echo    "<a href='index.php'><p>Klik hier om alle gerechten weer te geven!</p></a>";
+                            echo"</div>";
+                        }
+                    }
+                    ?>
                     <div class="cat voorgerechten" id="voorgerechten">
                         <h3>Voorgerechten</h3>
                         <ul>
                             <?php
-                                include("includes/menu/voorgerechten.php")
-                            ?>
+                                $catagorie = "voorgerechten";
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                     <div class="cat salades" id="salades">
                         <h3>Salades</h3>
                         <ul>
                             <?php
-                                include("includes/menu/salades.php")
-                            ?>
+                                $catagorie = "salades";
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                     <div class="cat soepen" id="soepen">
                         <h3>Soepen</h3>
                         <ul>
                             <?php
-                                include("includes/menu/soepen.php")
+                                $catagorie = "soepen";
+                                include("includes/menu.php")
                             ?>
                         </ul>
                     </div>
@@ -68,48 +101,48 @@
                         <h3>Noodles</h3>
                         <ul>
                             <?php
-                                include("includes/menu/noodles.php")
-                            ?>
+                                $catagorie = "noodles";
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                     <div class="cat vegetarisch" id="vegetarisch">
                         <h3>Vegetarisch</h3>
                         <ul>
                             <?php
-                                include("includes/menu/vegetarisch.php")
-                            ?>
+                                $catagorie = "vegetarisch";
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                     <div class="cat curry" id="curry">
                         <h3>Curry</h3>
                         <ul>
                             <?php
-                                include("includes/menu/curry.php")
-                            ?>
+                                $catagorie = "curry"; 
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                     <div class="cat bijgerechten" id="bijgerechten">
                         <h3>Bijgerechten</h3>
                         <ul>
                             <?php
-                                include("includes/menu/bijgerechten.php")
-                            ?>
+                                $catagorie = "bijgerechten";
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                     <div class="cat drinken" id="drinken">
                         <h3>Drinken</h3>
                         <ul>
                             <?php
-                                include("includes/menu/drinken.php")
-                            ?>
+                                $catagorie = "drinken";
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                     <div class="cat alcohol" id="alcohol">
                         <h3>Alcohol</h3>
                         <ul>
                             <?php
-                                include("includes/menu/alcohol.php")
-                            ?>
+                                $catagorie = "alcohol";
+                                include("includes/menu.php")                            ?>
                         </ul>
                     </div>
                 </div>
