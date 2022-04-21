@@ -426,7 +426,7 @@ main .mand-item {
 ////////////////reserveren//////////////
 /////////////////////////////////*/
 
-main .container2 {
+.container2 {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap-reverse;
@@ -437,12 +437,12 @@ main .container2 {
   margin: 50px 0 50px 0;
 }
 
-main .title-reserveren {
+.title-reserveren {
   height: auto;
   padding: 30px 0 30px 0;
 }
 
-main .title-reserveren h1 {
+.title-reserveren h1 {
   text-align: center;
   text-transform: uppercase;
   font-size: 30pt;
@@ -452,12 +452,12 @@ main .title-reserveren h1 {
   width: 100%;
 }
 
-main .title-reserveren h1 span {
+.title-reserveren h1 span {
   display: block;
   font-weight: 400;
 }
 
-main .title-reserveren h1::after {
+.title-reserveren h1::after {
   content: "";
   border: 0.5px solid #eee;
   display: block;
@@ -465,11 +465,11 @@ main .title-reserveren h1::after {
   width: 100%;
 }
 
-main .form {
+.form {
   width: 350px;
 }
 
-main .form form {
+form {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -491,7 +491,8 @@ main .form form {
   color: black;
   transition: all 0.5s ease-in-out;
 }
-.input-container input {
+.input-container input,
+.input-container textarea {
   border: 0;
   border-bottom: 1px solid rgb(209, 204, 204);
   background: transparent;
@@ -499,13 +500,16 @@ main .form form {
   padding: 8px 0 5px 0;
   font-size: 16px;
 }
-.input-container input:focus {
+.input-container input:focus,
+.input-container textarea:focus {
   border: none;
   outline: none;
   border-bottom: 1px solid black;
 }
 .input-container input:focus ~ label,
-.input-container input:valid ~ label {
+.input-container input:valid ~ label,
+.input-container textarea:focus ~ label,
+.input-container textarea:valid ~ label {
   top: -12px;
   font-size: 12px;
 }
@@ -549,11 +553,11 @@ main .tijden-list .dagen {
 ////////////////Registreren///////////////
 /////////////////////////////////*/
 
-main .container2 .registreren {
+.registreren {
   width: 350px;
 }
 
-main .container2 .inloggen {
+.inloggen {
   width: 350px;
 }
 
@@ -733,7 +737,6 @@ footer {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 250px;
   background-color: rgb(31, 29, 29);
 }
 
@@ -751,8 +754,8 @@ footer .container .left {
 }
 
 footer .container .middle {
-  width: 320px;
-  height: 13%;
+  width: 350px;
+  height: 100%;
   color: white;
 }
 
@@ -764,6 +767,37 @@ footer .container .middle p {
 footer .container .right {
   width: 300px;
   height: 100%;
+}
+
+footer .container3 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+  row-gap: 50px;
+  column-gap: 50px;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+footer .container3 form button {
+  width: 50%;
+  height: 50px;
+  border: none;
+  background-color: rgba(57, 53, 53, 0.726);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+footer .container3 form button:hover {
+  background-color: rgb(114, 112, 112);
+  cursor: pointer;
+}
+
+footer .input-container input,
+footer .input-container textarea,
+footer .input-container label {
+  color: white;
 }
 
 /*///////////////////////////////////
