@@ -22,6 +22,85 @@
             </h1>
         </div>
         <div class="container">
+        <?php
+        session_start();
+        if(isset($_GET['action'])) {
+
+            // Iets toevoegen aan de winkelmand
+            if ($_GET['action'] == "add") {
+                if (isset($_SESSION['shoppingCart'])) {
+                
+                    $place = array_search($_GET['id'], array_column($_SESSION['shoppingCart'], 'id'));
+                
+                    $exists = false;
+
+                    $amount = $_SESSION['shoppingCart'][$place]['amount'];
+
+                    foreach($_SESSION['shoppingCart'] as $current) {
+                        if ($current['id'] == $_GET['id']) {
+                            $amount++;
+                            $exists = TRUE;
+                        }
+                    }
+
+                    if ($exists == TRUE) {
+
+                    $_SESSION['shoppingCart'][$place]['amount'] = $amount;
+                    header('Location: winkelmand.php');
+                    
+                    } else {
+
+                    $count = count($_SESSION['shoppingCart']);
+                    $_SESSION['shoppingCart'][$count] = array(
+                            
+                        'id' => $_GET['id'],
+                        'amount' => 1,
+                        'naam' => $_GET['naam'],
+                        'prijs' => $_GET['prijs'],
+                        'beschrijving' => $_GET['beschrijving'],
+            
+                    );
+                    header('Location: ../index.php');
+                    }
+
+                } else {
+
+                    $_SESSION['shoppingCart'][0] = array(
+            
+                    'id' => $_GET['id'],
+                    'amount' => 1,
+                    'naam' => $_GET['naam'],
+                    'prijs' => $_GET['prijs'],
+                    'beschrijving' => $_GET['beschrijving'],
+            
+                    );
+                    header('Location: ../index.php');
+
+                }
+            }
+
+            // Verwijderen uit de winkelmand 
+            if ($_GET['action'] == "remove") {
+                $place = array_search($_GET['id'], array_column($_SESSION['shoppingCart'], 'id'));
+
+                $amount = $_SESSION['shoppingCart'][$place]['amount'];
+      
+                if ($amount > 1) {
+      
+                  $amount--;
+                  $_SESSION['shoppingCart'][$place]['amount'] = $amount;
+                  header('Location: winkelmand.php');
+      
+                } else {
+      
+                  unset($_SESSION['shoppingCart'][$place]);
+                  $_SESSION['shoppingCart'] = array_values($_SESSION['shoppingCart']);
+                  header('Location: winkelmand.php');
+      
+                }
+            }
+        }  ?>
+
             <div class="cat mand-item">
                 <div class="winkelmandf wLeft">
                     <h4>gerecht</h4>
@@ -36,19 +115,6 @@
                 <div class="winkelmandf wRight">
                     <h5>Prijs</h5>
                 </div>
-                <!-- <ul>
-                    <li>
-                        <span>
-                            <span class='aantal'>aantal
-                                <a class="min-plus" href=""><button>-</button></a>
-                                <span class="aantal-nummer">1</span>
-                                <a class="min-plus" href=""><button>+</button></a>
-                            </span>
-                        </span>
-                        <b> gerecht </b><br>
-                        <span class='description'>beschrijving</span>
-                    </li>
-                </ul>   -->
             </div>
         </div>
 	</main>
