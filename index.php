@@ -147,6 +147,11 @@
                     </div>
                 </div>
             </div>
+            <div class="winkelmand">
+                <h2>Jouw bestelling</h2>
+                <p>Kies iets lekkers uit het menu en plaats je bestelling.</p>
+                <button>Bestellen</button>
+            </div>
         </div>
 	</main>
     <script
