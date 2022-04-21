@@ -116,6 +116,12 @@
                     <h5>Prijs</h5>
                 </div>
             </div>
+            <div class="winkelmand-total">
+                <div class="winkelmand-total-details">
+                    <p>Totaal:</p><p class="winkelmand-totaal-prijs">Prijs</p>
+                    <button>Bestellen</button>
+                </div>
+            </div>
         </div>
 	</main>
 	<?php
