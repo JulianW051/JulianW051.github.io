@@ -36,19 +36,12 @@
                 <div class="winkelmandf wRight">
                     <h5>Prijs</h5>
                 </div>
-                <!-- <ul>
-                    <li>
-                        <span>
-                            <span class='aantal'>aantal
-                                <a class="min-plus" href=""><button>-</button></a>
-                                <span class="aantal-nummer">1</span>
-                                <a class="min-plus" href=""><button>+</button></a>
-                            </span>
-                        </span>
-                        <b> gerecht </b><br>
-                        <span class='description'>beschrijving</span>
-                    </li>
-                </ul>   -->
+            </div>
+            <div class="winkelmand-total">
+                <div class="winkelmand-total-details">
+                    <p>Totaal:</p><p class="winkelmand-totaal-prijs">Prijs</p>
+                    <button>Bestellen</button>
+                </div>
             </div>
         </div>
 	</main>

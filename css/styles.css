@@ -380,6 +380,48 @@ main .mand-item {
   justify-content: end;
 }
 
+.winkelmand-total {
+  display: flex;
+  justify-content: end;
+  width: 70%;
+  margin: 40px 0 40px 0;
+}
+
+.winkelmand-total-container {
+  width: 60%;
+}
+
+.winkelmand-total-details {
+  width: 250px;
+  display: flex;
+  justify-content: end;
+  flex-wrap: wrap;
+}
+
+.winkelmand-total-details p {
+  width: 50%;
+}
+
+.winkelmand-totaal-prijs {
+  text-align: end;
+}
+
+.winkelmand-total-details button {
+  margin-top: 20px;
+  width: 130px;
+  height: 50px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.winkelmand-total-details button:hover {
+  background-color: rgb(114, 112, 112);
+  cursor: pointer;
+}
+
 /*///////////////////////////////////
 ////////////////reserveren//////////////
 /////////////////////////////////*/
