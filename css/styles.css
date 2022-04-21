@@ -72,6 +72,10 @@ header .nav a {
   color: white;
 }
 
+header .fa-shopping-cart {
+  font-size: 17px;
+}
+
 header .upper {
   width: 100%;
   height: 70px;
@@ -147,6 +151,17 @@ main .list {
   margin-left: 30px;
 }
 
+@media only screen and (max-width: 775px) {
+  main .list {
+    padding-top: 50px;
+    top: 0;
+    position: unset;
+    width: 300px;
+    height: 600px;
+    margin-left: 30px;
+  }
+}
+
 main .list ul li {
   margin-top: 10px;
 }
@@ -174,9 +189,10 @@ main .menu {
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  width: 50%;
+  width: 40%;
+  min-width: 350px;
   row-gap: 25px;
-  margin: 0 30px 50px 0;
+  margin: 0 0 50px 0;
 }
 
 main .menu .info {
@@ -191,10 +207,11 @@ main .menu .info p {
   color: #555555;
 }
 
-main .menu .container {
+main .container {
   width: 100%;
   display: flex;
   justify-content: start;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -228,13 +245,13 @@ main .menu .container .niksGevonden span {
   color: red;
 }
 
-main .menu .container .cat {
+main .container .cat {
   width: 100%;
   height: auto;
   margin-top: 20px;
 }
 
-main .menu .container .cat h3 {
+main .container .cat h3 {
   font-size: 20px;
   font-weight: 600;
   color: #555555;
@@ -242,23 +259,23 @@ main .menu .container .cat h3 {
   border-bottom: 1px solid black;
 }
 
-main .menu .container .cat ul li {
+main .container .cat ul li {
   border-bottom: 1px solid #eee;
 }
 
-main .menu .container .cat ul li a {
+main .container .cat ul li a {
   display: block;
   padding: 20px 0 20px 0;
 }
 
-main .menu .container .cat ul li a .price {
+main .container .cat ul li a .price {
   float: right;
   font-size: 15px;
   color: #555;
   font-weight: 600;
 }
 
-main .menu .container .cat ul li a .price::after {
+main .container .cat ul li a .price::after {
   content: "+";
   display: inline-block;
   background-color: teal;
@@ -267,18 +284,100 @@ main .menu .container .cat ul li a .price::after {
   margin-left: 9px;
 }
 
-main .menu .container .cat ul li a b {
+main .container .cat ul li a b {
   color: black;
   font-size: 16px;
   font-weight: 600;
 }
 
-main .menu .container .cat ul li a .description {
+main .container .cat ul li a .description {
   word-break: break-word;
   color: #555;
   width: 50%;
   display: block;
   font-size: 14px;
+}
+
+main .lower .winkelmand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  flex-direction: column;
+  width: 240px;
+  height: 200px;
+  border-radius: 30px;
+  border: 1px solid rgb(228, 228, 228);
+  padding: 20px;
+}
+
+main .lower .winkelmand h2 {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+main .lower .winkelmand p {
+  font-size: 12px;
+}
+
+main .lower .winkelmand button {
+  color: #bbb !important;
+  background-color: #f0f0f0 !important;
+  border-bottom-color: #bbb !important;
+  text-shadow: none !important;
+  text-decoration: none;
+  display: inline-block;
+  width: 80%;
+  height: 50px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/*///////////////////////////////////
+////////////////winkelmand//////////////
+/////////////////////////////////*/
+
+main .mand-item {
+  width: 60% !important;
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #555;
+}
+
+.winkelmandf {
+  width: 33%;
+  height: 100%;
+}
+
+.wMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wMiddle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.wMiddle a {
+  margin: 5px;
+}
+
+.wMiddle a:hover {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.wRight {
+  display: flex;
+  justify-content: end;
 }
 
 /*///////////////////////////////////
@@ -348,7 +447,6 @@ main .form form {
   left: 0px;
   font-size: 16px;
   color: black;
-  pointer-event: none;
   transition: all 0.5s ease-in-out;
 }
 .input-container input {
