@@ -47,6 +47,10 @@
                         </div>
                     </form>
                     <?php 
+                    // Voor de winkelmand later in de code
+                    session_start();
+                    // -----------------------------------
+
                     require_once("includes/connector.php");
                     if (isset($_POST['search'])) {
 
@@ -147,11 +151,28 @@
                     </div>
                 </div>
             </div>
-            <div class="winkelmand">
-                <h2>Jouw bestelling</h2>
-                <p>Kies iets lekkers uit het menu en plaats je bestelling.</p>
-                <button>Bestellen</button>
-            </div>
+            <?php
+            if(empty($_SESSION['shoppingCart'])) {
+                echo "<div class='winkelmand'>";
+                echo     "<h2>Jouw bestelling</h2>";
+                echo     "<p>Kies iets lekkers uit het menu en plaats je bestelling.</p>";
+                echo     "<a href='pages/winkelmand.php'><button>Bestellen</button></a>";
+                echo "</div>";
+            } else {
+                $prijs = 0.0;
+    
+                foreach($_SESSION['shoppingCart'] as $product) {
+                  $prijs = $prijs + ($product['prijs'] * $product['amount']);
+                }
+
+                echo "<div class='winkelmand'>";
+                echo     "<h2>Jouw bestelling</h2>";
+                echo     "<p>Kies iets lekkers uit het menu en plaats je bestelling.</p>";
+                echo     "<p>Totaal: " . $prijs . "</p>";
+                echo     "<a href='pages/winkelmand.php'><button class='blauw'>Bestellen</button></a>";
+                echo "</div>";
+            }
+            ?>
         </div>
 	</main>
     <script
