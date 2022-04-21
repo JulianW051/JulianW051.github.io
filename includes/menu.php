@@ -18,7 +18,7 @@ if (isset($_POST['search'])) {
         {
             
             echo        "<li>";
-            echo            "<a href='pages/winkelmand.php?id=" . $result['ID'] . "&naam=" . $result['gerecgt'] . "&prijs=" . $roundendPrice . "&beschrijving=" . $result['beschrijving'] . "'>";
+            echo            "<a href='pages/winkelmand.php?id=" . $result['ID'] . "&naam=" . $result['gerecgt'] . "&prijs=" . $roundendPrice . "&beschrijving=" . $result['beschrijving'] . "&action=add'>";
             echo                "<span>";
             echo                    "<span class='price'>€ " . $roundendPrice . "</span>";
             echo                "</span>";
