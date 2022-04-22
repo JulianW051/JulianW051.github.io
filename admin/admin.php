@@ -1,3 +1,6 @@
+<?php
+    include("../includes/session.php")
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +32,35 @@
                 </tr>
                 <?php  
                     include("../includes/reserveringen-uitlezen.php")
+                ?>
+            </table>
+        </div>
+        <div class="bestellingen-admin">
+            <h2>Bestellingen</h2>
+            <table>
+                <tr> 
+                    <th>producten</th>
+                    <th>prijs</th>
+                    <th>aantal</th>
+                    <th></th>
+                </tr>
+                <?php  
+                    include("../includes/bestellingen-uitlezen.php")
+                ?>
+            </table>
+        </div>
+        <div class="bestellingen-admin">
+            <h2>Contact opnemen</h2>
+            <table>
+                <tr> 
+                    <th>Naam</th>
+                    <th>Nummer</th>
+                    <th>Email</th>
+                    <th>Bericht</th>
+                    <th></th>
+                </tr>
+                <?php  
+                    include("../includes/contact-uitlezen.php")
                 ?>
             </table>
         </div>

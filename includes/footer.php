@@ -12,7 +12,7 @@
                             contact
                         </h1>
                     </div>
-                    <form class="form__group field" action="../actions/registreren.php" id="target" method="post">
+                    <form class="form__group field" action="<?php if ($page == "index") {echo "actions/contact.php";} else {echo "../actions/contact.php";} ?>?page=<?php echo $page;?>" id="target" method="post">
                         <div class="input-container">
                             <input  type="text" name="name" required=""/>
                             <label>Naam</label>		
